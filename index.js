@@ -16,7 +16,7 @@ db.connect();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 async function getItems(){
-  const result = await db.query("SELECT * FROM items")
+  const result = await db.query("SELECT * FROM items ORDER BY id ASC;")
   let dbItems =[];
   dbItems = result.rows;
   console.log(dbItems)
